@@ -10,10 +10,10 @@ cc_library(
         "libraries/liblmdb/lmdb.h",
         "libraries/liblmdb/midl.h",
     ],
+    copts = ["-Wno-implicit-fallthrough"],
     includes = [
         "libraries/liblmdb/",
     ],
-    copts = ["-Wno-implicit-fallthrough"],
     linkstatic = select({
         "@com_stripe_ruby_typer//tools/config:linkshared": 0,
         "//conditions:default": 1,
